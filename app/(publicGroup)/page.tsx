@@ -5,6 +5,7 @@ import PublicCategoriesPage from './categories/page';
 import Highlights from './_components/highlights';
 import Statistics from './_components/statistics';
 import Testimonials from './_components/testimonials';
+import Newsletter from './_components/newsletter';
 
 const RootPage = () => {
     return (
@@ -15,6 +16,7 @@ const RootPage = () => {
             <Highlights></Highlights>
             <Statistics></Statistics>
             <Testimonials></Testimonials>
+            <Newsletter></Newsletter>
             
         </div>
     );
