@@ -1,35 +1,45 @@
-import PropertyCard from '@/components/shared/properyCard';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import AnimatedPropertyCard from "@/components/shared/AnimatedPropertyCard";
 
 const FeaturePropertyList = async () => {
+  const data = await fetch(
+    "https://rentnest-seven.vercel.app/api/properties",
+    {
+      cache: "no-store",
+    }
+  );
 
-    const data = await fetch('https://rentnest-seven.vercel.app/api/properties', { cache: 'no-store' })
-    const properties = await data.json()
-    return (
-        <div className='space-y-12'>
-            <div className='text-center md:text-4xl text-xl font-semibold '>
-                <h1>Browse Properties and Rent</h1>
-            </div>
-            <div className='grid md:grid-cols-3 grid-cols-1   gap-4'>
-                {
-                    properties.data.slice(0, 6).map((property: any) => (
-                        <PropertyCard key={property.id} property={property}></PropertyCard>
-                    ))
-                }
+  const properties = await data.json();
 
-            </div>
-            <div className='flex justify-center'>
-                <Link href={"/properties"}>
-                <Button variant={"secondary"} >
-                    Browse All
-                </Button>
-                </Link>
-            </div>
-        </div>
-    );
+  return (
+    <div className="space-y-12">
+      {/* Heading */}
+      <div className="text-center">
+        <h2 className="text-xl font-semibold md:text-4xl">
+          Browse Properties and Rent
+        </h2>
+      </div>
+
+      {/* Property Cards */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {properties.data.slice(0, 6).map((property: any, index: number) => (
+          <AnimatedPropertyCard
+            key={property.id}
+            property={property}
+            index={index}
+          />
+        ))}
+      </div>
+
+      {/* Browse All Button */}
+      <div className="flex justify-center">
+        <Link href="/properties">
+          <Button variant="default" className="rounded-lg bg-linear-to-r from-green-500 to-emerald-500">Browse All</Button>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default FeaturePropertyList;

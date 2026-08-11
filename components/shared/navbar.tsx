@@ -156,9 +156,9 @@ const Navbar = ({ user }: NavbarProps) => {
                                 : "bg-transparent border-transparent"
                         )}
                     >
-                        <a href={'/'} className="text-lg md:text-2xl text-blue-600 font-bold flex items-center justify-center gap-2">
+                        <Link href={'/'} className="text-lg md:text-2xl text-blue-600 font-bold flex items-center justify-center gap-2">
                          <HousePlus></HousePlus>  Rent Nest
-                        </a>
+                        </Link>
                         <div>
                             <NavigationMenu className="max-lg:hidden bg-muted p-0.5 rounded-full">
                                 <NavigationMenuList className="flex gap-0">
@@ -250,8 +250,8 @@ const Navbar = ({ user }: NavbarProps) => {
                                     className="w-56 mt-2"
                                 >
                                     {navigationData.map((item) => (
-                                        <DropdownMenuItem key={item.title}>
-                                            <a href={item.href} className="w-full cursor-pointer text-sm font-medium">{item.title}</a>
+                                        <DropdownMenuItem key={item.title} asChild>
+                                            <Link href={item.href} className="w-full cursor-pointer text-sm font-medium">{item.title}</Link>
                                         </DropdownMenuItem>
                                     ))}
                                 </DropdownMenuContent>

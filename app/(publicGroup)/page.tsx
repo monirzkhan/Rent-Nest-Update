@@ -3,6 +3,7 @@ import HomeBanner from './_components/homeBanner';
 import FeaturePropertyList from './_components/featurePropertyList';
 import PublicCategoriesPage from './categories/page';
 import Highlights from './_components/highlights';
+import Statistics from './_components/statistics';
 
 const RootPage = () => {
     return (
@@ -11,6 +12,7 @@ const RootPage = () => {
             <PublicCategoriesPage></PublicCategoriesPage>
             <FeaturePropertyList></FeaturePropertyList>
             <Highlights></Highlights>
+            <Statistics></Statistics>
             
         </div>
     );
