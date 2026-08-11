@@ -436,6 +436,16 @@ const SignInCard = () => {
                   )}
                 </Button>
               </motion.div>
+              <div className="w-11/12 mx-auto flex items-center gap-4 justify-center">
+                <Button onClick={()=>{setEmail('demo.tenant@gmail.com'),setPassword('123123')}}
+                className="py-1.5 px-1.5" >Demo-Tenant</Button>
+                <Button onClick={()=>{setEmail('demo.landlord@gmail.com'),setPassword('123123')}}
+                className="py-1.5 px-1.5" >Demo-Landlord</Button>
+                <Button onClick={()=>{setEmail('admin@gmail.com'),setPassword('12345678')}}
+                className="py-1.5 px-1.5" >Demo-Admin</Button>
+                
+               
+              </div>
 
               <div className="text-center mt-6">
                 <a href="#" className="text-blue-600 hover:text-blue-700 text-sm transition-colors">
