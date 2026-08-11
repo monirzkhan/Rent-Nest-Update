@@ -6,6 +6,7 @@ import Highlights from './_components/highlights';
 import Statistics from './_components/statistics';
 import Testimonials from './_components/testimonials';
 import Newsletter from './_components/newsletter';
+import FAQ from './_components/faq';
 
 const RootPage = () => {
     return (
@@ -17,6 +18,7 @@ const RootPage = () => {
             <Statistics></Statistics>
             <Testimonials></Testimonials>
             <Newsletter></Newsletter>
+            <FAQ></FAQ>
             
         </div>
     );
