@@ -4,6 +4,7 @@ import FeaturePropertyList from './_components/featurePropertyList';
 import PublicCategoriesPage from './categories/page';
 import Highlights from './_components/highlights';
 import Statistics from './_components/statistics';
+import Testimonials from './_components/testimonials';
 
 const RootPage = () => {
     return (
@@ -13,6 +14,7 @@ const RootPage = () => {
             <FeaturePropertyList></FeaturePropertyList>
             <Highlights></Highlights>
             <Statistics></Statistics>
+            <Testimonials></Testimonials>
             
         </div>
     );
