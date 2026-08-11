@@ -7,6 +7,7 @@ import Statistics from './_components/statistics';
 import Testimonials from './_components/testimonials';
 import Newsletter from './_components/newsletter';
 import FAQ from './_components/faq';
+import CTASection from './_components/CTAAction';
 
 const RootPage = () => {
     return (
@@ -19,6 +20,7 @@ const RootPage = () => {
             <Testimonials></Testimonials>
             <Newsletter></Newsletter>
             <FAQ></FAQ>
+            <CTASection></CTASection>
             
         </div>
     );
