@@ -8,7 +8,7 @@ export const getAllCategories = async () => {
    
    
 
-    const res = await fetch(`${process.env.BACKEND_API_URL}/api/categories`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API_URL}/api/categories`, {
         method: "GET",
         headers: {
             // Authorization : accessToken as unknown as string,
@@ -21,10 +21,11 @@ export const getAllCategories = async () => {
     });
 
     const result = await res.json();
+    
 
-    if (result.success && result.data.paymentURL) {
-        redirect(result.data.paymentURL)
-    }
+    // if (result.success && result.data.paymentURL) {
+    //     redirect(result.data.paymentURL)
+    // }
 
     return result
 
