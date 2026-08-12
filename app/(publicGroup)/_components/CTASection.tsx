@@ -99,7 +99,7 @@ export default function CTASection() {
                 </Link>
 
                 <Link
-                  href="/dashboard/properties/add"
+                  href="/dashboard/landlord/properties"
                   className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/15 active:scale-[0.98] sm:w-auto"
                 >
                   <Building2 size={17} />

@@ -7,7 +7,7 @@ import Statistics from './_components/statistics';
 import Testimonials from './_components/testimonials';
 import Newsletter from './_components/newsletter';
 import FAQ from './_components/faq';
-import CTASection from './_components/CTAAction';
+import CTASection from './_components/CTASection';
 
 const RootPage = () => {
     return (

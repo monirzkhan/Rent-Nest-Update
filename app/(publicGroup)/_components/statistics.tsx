@@ -2,6 +2,8 @@ import { cookies } from "next/headers";
 import StatisticsClient from "./StatisticsClient";
 
 const API_URL = "https://rentnest-seven.vercel.app/api";
+export const dynamic = "force-dynamic";
+
 
 const Statistics = async () => {
   try {
