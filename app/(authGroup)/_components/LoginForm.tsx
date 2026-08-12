@@ -1,9 +1,10 @@
 "use client"
 import React, { useRef, useEffect, useState, useActionState } from "react";
-import { Eye, EyeOff, ArrowRight, HousePlus } from "lucide-react";
+import { Eye, EyeOff, ArrowRight, HousePlus,ShieldCheck, User, UserRound } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { loginAction } from "../_actions/authAction";
 import { toast } from "sonner";
+
 
 
 // Helper function to merge class names
@@ -146,7 +147,7 @@ const DotMap = () => {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const context = canvas.getContext("2d");
     if (!context) return;
 
@@ -247,7 +248,7 @@ const DotMap = () => {
   );
 };
 
-const handleGoogleSignIn=()=>{
+const handleGoogleSignIn = () => {
   toast.error("Google Auth is under maintainance, Please Login with email and password")
 }
 const SignInCard = () => {
@@ -436,15 +437,68 @@ const SignInCard = () => {
                   )}
                 </Button>
               </motion.div>
-              <div className="w-11/12 mx-auto flex items-center gap-4 justify-center">
-                <Button onClick={()=>{setEmail('demo.tenant@gmail.com'),setPassword('123123')}}
-                className="py-1.5 px-1.5" >Demo-Tenant</Button>
-                <Button onClick={()=>{setEmail('demo.landlord@gmail.com'),setPassword('123123')}}
-                className="py-1.5 px-1.5" >Demo-Landlord</Button>
-                <Button onClick={()=>{setEmail('admin@gmail.com'),setPassword('12345678')}}
-                className="py-1.5 px-1.5" >Demo-Admin</Button>
-                
-               
+              {/* demo button */}
+              
+
+              <div className="w-full max-w-xl mx-auto px-4 sm:px-6">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-3">
+                  {/* Demo Tenant */}
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        setEmail("demo.tenant@gmail.com");
+                        setPassword("123123");
+                      }}
+                      className="w-11/12 sm:w-auto min-w-[130px] py-2 px-1 text-sm"
+                    >
+                      <User className="w-4 h-4 mr-1" />
+                      Demo Tenant
+                    </Button>
+                  </motion.div>
+
+                  {/* Demo Landlord */}
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        setEmail("demo.landlord@gmail.com");
+                        setPassword("123123");
+                      }}
+                      className="w-11/12 sm:w-auto min-w-[130px] py-2 px-1 text-sm"
+                    >
+                      <UserRound className="w-4 h-4 mr-1" />
+                      Demo Landlord
+                    </Button>
+                  </motion.div>
+
+                  {/* Demo Admin */}
+                  <motion.div
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="w-full sm:w-auto"
+                  >
+                    <Button
+                      type="button"
+                      onClick={() => {
+                        setEmail("admin@gmail.com");
+                        setPassword("12345678");
+                      }}
+                      className="w-11/12 sm:w-auto min-w-[130px] py-2 px-1 text-sm"
+                    >
+                      <ShieldCheck className="w-4 h-4 mr-1" />
+                      Demo Admin
+                    </Button>
+                  </motion.div>
+                </div>
               </div>
 
               <div className="text-center mt-6">
