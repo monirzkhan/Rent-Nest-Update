@@ -2,13 +2,13 @@ import { cookies } from "next/headers";
 import StatisticsClient from "./StatisticsClient";
 
 const API_URL = "https://rentnest-seven.vercel.app/api";
-export const dynamic = "force-dynamic";
+
 
 
 const Statistics = async () => {
   try {
-    const cookieStore = await cookies();
-    const token = cookieStore.get('accessToken')?.value;
+    // const cookieStore = await cookies();
+    // const token = cookieStore.get('accessToken')?.value;
     const [propertiesRes, usersRes, rentalRequestsRes] =
       await Promise.all([
         fetch(`${API_URL}/properties`, {
@@ -19,7 +19,7 @@ const Statistics = async () => {
           next: { revalidate: 60 },
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            // Authorization: `Bearer ${token}`,
           },
         }),
 
@@ -27,7 +27,7 @@ const Statistics = async () => {
           next: { revalidate: 60 },
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+            // Authorization: `Bearer ${token}`,
           }
         }),
       ]);
